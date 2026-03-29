@@ -1,12 +1,7 @@
-import './styles/App.css'
+import { AppRouter } from "./providers/router/AppRouter";
 
-function App() {
+const App = () => {
+    return <AppRouter />;
+};
 
-  return (
-    <>
-      <h1>e-commerce app</h1>
-    </>
-  )
-}
-
-export default App
+export default App;
