@@ -1,10 +1,8 @@
-import {Products} from "../../../entitys/products";
-import {ThemeToggle} from "../../../shared/ui";
-
+import {Products} from "../../../entitys/products/ui/Products";
 const HomePage = () => {
+
     return <div>
-        <ThemeToggle/>
-        <Products />
+        <Products/>
     </div>;
 };
 

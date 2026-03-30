@@ -1,5 +1,5 @@
-export type { Product } from "./model/types";
+export type { Product } from "./modelAndHooks/types";
 export { ProductCard } from "./ui/ProductCard";
-export { useProducts } from "./model/useProducts";
+export { useProducts } from "./modelAndHooks/useProducts";
 export { getProducts } from "./api/productsApi";
 export { Products } from "./ui/Products";

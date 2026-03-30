@@ -1,5 +1,11 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-    baseURL: "https://sandbox.mockerito.com/ecommerce/api",
+    baseURL: "/api",
+    headers: {
+        "Content-Type": "application/json",
+    },
 });
+
+
+//  target: "https://dummyjson.com", vite config
