@@ -11,10 +11,6 @@ export const Products = () => {
     const { products, loading, error } = useProducts()
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-    if (error) {
-        return <p className="text-red-500 text-center">{error}</p>
-    }
-
     if (loading) {
         return (
             <div className={gridClass}>
@@ -23,6 +19,15 @@ export const Products = () => {
                 ))}
             </div>
         )
+    }
+
+    if (error) {
+        return <div className="flex justify-center mt-3">
+            <div className="bg-red-50 border border-red-300 text-red-600 px-4 py-2 rounded-lg text-sm flex items-center gap-2">
+                <span>⚠️</span>
+                <p>{error}</p>
+            </div>
+        </div>
     }
 
     return (

@@ -39,9 +39,12 @@ export interface Product {
         qrCode: string
     }
 
-    reviews: {
-        rating?: number
-        comment?: string
-        reviewerName?: string
-    }[]
+    reviews: Review[];
 }
+
+export type Review = {
+    rating: number;
+    comment: string;
+    date: string;
+    reviewerName: string;
+};
