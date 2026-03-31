@@ -1,8 +1,8 @@
-import {Products} from "../../../entitys/products/ui/Products";
+import {ProductList} from "@/widgets/Products";
 const HomePage = () => {
 
     return <div>
-        <Products/>
+        <ProductList/>
     </div>;
 };
 

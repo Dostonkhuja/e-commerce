@@ -1,5 +1,4 @@
-export type { Product,Review } from "./modelAndHooks/types";
+export type { Product,Review } from "@/entitys/products/model/types.ts";
 export { ProductCard } from "./ui/ProductCard";
-export { useProducts } from "./modelAndHooks/useProducts";
+export { useProducts } from "@/entitys/products/hooks/useProducts";
 export { getProducts } from "./api/productsApi";
-export { Products } from "./ui/Products";

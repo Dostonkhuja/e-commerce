@@ -1,13 +1,14 @@
-import {type Product, ProductCard} from "../index.ts";
-import { ProductSkeleton } from "../../../shared/ui/index.ts";
-import { useProducts } from "../index.ts";
+import {type Product, ProductCard} from "@/entitys/products";
+import { ProductSkeleton } from "@/shared/ui";
+import { useProducts } from "@/entitys/products";
 import {useState} from "react";
 import {ProductDrawer} from "@/features/products";
+import {AddToCartButton} from "@/features/cart";
 
 const gridClass =
     "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-white dark:bg-gray-950 min-h-screen";
 
-export const Products = () => {
+export const ProductList = () => {
     const { products, loading, error } = useProducts()
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
@@ -34,11 +35,14 @@ export const Products = () => {
         <>
             <div className={gridClass}>
                 {products.map((p) => (
-                    <div key={p.id} onClick={() => setSelectedProduct(p)}>
+                    <div
+                        className="group flex flex-col h-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+                        key={p.id} onClick={() => setSelectedProduct(p)}
+                    >
                         <ProductCard product={p}/>
+                        <AddToCartButton product={p}/>
                     </div>
                 ))}
-
                 <ProductDrawer
                     open={selectedProduct !== null}
                     product={selectedProduct}

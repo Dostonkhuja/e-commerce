@@ -1,12 +1,12 @@
-import { useProductDrawer } from "../index.ts";
+import { useProductDrawer } from "../hooks/useProductDrawer.ts";
 import { ProductDrawerHeader } from "../index.ts";
 import { ProductDrawerGallery } from "../index.ts";
 import { ProductDrawerPrice } from "../index.ts";
 import { ProductDrawerSpecs } from "../index.ts";
 import { ProductDrawerReviews } from "../index.ts";
-import { ProductDrawerFooter } from "../index.ts";
 
 import type {Product} from "@/entitys/products";
+import {AddToCartButton} from "@/features/cart";
 
 type Props = {
     open: boolean;
@@ -49,7 +49,7 @@ export function ProductDrawer({ open, onClose, product }: Props) {
                 </div>
 
                 <div className="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
-                    <ProductDrawerFooter />
+                    <AddToCartButton product={product}/>
                 </div>
             </div>
         </div>

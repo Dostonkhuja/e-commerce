@@ -8,9 +8,7 @@ export const ProductCard = ({ product }: Props) => {
     const inStock = product.availabilityStatus === "In Stock"
 
     return (
-
-        <div className="group flex flex-col h-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
-
+        <>
             <div className="relative overflow-hidden">
                 <img
                     src={product.thumbnail}
@@ -59,17 +57,7 @@ export const ProductCard = ({ product }: Props) => {
                     <span>{product.brand}</span>
                     <span>{product.discountPercentage}% OFF</span>
                 </div>
-
-                {/* BUTTON FIX */}
-                <button
-                    className="mt-auto w-full rounded-xl bg-blue-600 text-white py-2 text-sm font-medium hover:bg-blue-700 active:scale-95 transition"
-                    onClick={(e) => {
-                        e.stopPropagation()
-                    }}
-                >
-                    Add to cart
-                </button>
             </div>
-        </div>
+        </>
     )
 }

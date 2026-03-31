@@ -15,7 +15,7 @@ export const useProducts = () => {
                 const data = await getProducts();
                 setProducts(data);
             } catch {
-                setError("Products yuklanmadi");
+                setError("ProductList yuklanmadi");
             } finally {
                 setLoading(false);
             }
