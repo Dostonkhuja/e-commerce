@@ -1,3 +1,6 @@
+import {useAppDispatch} from "@/app/providers/store/hooks.ts";
+import {clearCart} from "@/entitys/cart/model/cartPersistSlice.ts";
+
 type User = {
     firstName: string
     lastName: string
@@ -11,11 +14,13 @@ type Props = {
 export const UserInfo = ({ setIsAuth }: Props) => {
     const storedUser = localStorage.getItem("user")
     const user: User | null = storedUser ? JSON.parse(storedUser) : null
+    const dispatch = useAppDispatch()
 
     const handleLogout = () => {
         localStorage.removeItem("token")
         localStorage.removeItem("user")
         setIsAuth(false)
+        dispatch(clearCart())
     }
 
     if (!user) return null

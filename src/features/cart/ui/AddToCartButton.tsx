@@ -1,6 +1,6 @@
-import { useAppDispatch } from '@/app/providers/store/hooks'
-import { addToCart } from '../model/cartSlice'
+import {useAppDispatch} from '@/app/providers/store/hooks'
 import type {Product} from "@/entitys/products";
+import {addToCartHandler} from "@/features/cart";
 
 type Props = {
     product: Product
@@ -14,7 +14,7 @@ export const AddToCartButton = ({ product }: Props) => {
             className="mt-auto w-full rounded-xl bg-blue-600 text-white py-2 text-sm font-medium hover:bg-blue-700 active:scale-95 transition"
             onClick={(e) => {
             e.stopPropagation()
-            dispatch(addToCart(product))}
+            dispatch(addToCartHandler(product))}
         }>
             Add to cart
         </button>

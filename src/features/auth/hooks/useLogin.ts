@@ -2,6 +2,9 @@ import { useState } from "react";
 import type { FormEvent, ChangeEvent } from "react";
 import { login } from "../index";
 import type { AxiosError } from "axios";
+import {useAppDispatch, useAppSelector} from "@/app/providers/store/hooks";
+import {selectCartProducts} from "@/entitys/cart/model/persistSelectors.ts";
+import {updateCartThunk} from "@/features/cart";
 
 type LoginError = {
     message: string;
@@ -13,12 +16,15 @@ type Props = {
     setIsAuth: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export function useLogin({ open, setOpen,setIsAuth }: Props) {
+export function useLogin({ open, setOpen, setIsAuth }: Props) {
+    const dispatch = useAppDispatch();
+    const products =  useAppSelector(selectCartProducts);
+
+
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string>("");
-
 
     const onChangeUsername = (e: ChangeEvent<HTMLInputElement>) => {
         setUsername(e.target.value);
@@ -36,10 +42,13 @@ export function useLogin({ open, setOpen,setIsAuth }: Props) {
 
         try {
             const res = await login({ username, password });
-            localStorage.setItem("token", res.accessToken)
-            localStorage.setItem("user", JSON.stringify(res))
+            localStorage.setItem("token", res.accessToken);
+            localStorage.setItem("user", JSON.stringify(res));
+
             setIsAuth(true);
             setOpen(false);
+
+            dispatch(updateCartThunk(products));
         } catch (err: unknown) {
             const error = err as AxiosError<LoginError>;
             setError(error.response?.data?.message || "Login error");

@@ -40,6 +40,9 @@ export interface Product {
     }
 
     reviews: Review[];
+    quantity: number
+    total: number
+    discountedTotal: number
 }
 
 export type Review = {

@@ -5,7 +5,7 @@ export type CartProduct = {
     quantity: number
     total: number
     discountPercentage: number
-    discountedTotal: number
+    discountedTotal?: number
     thumbnail: string
 }
 
@@ -16,4 +16,5 @@ export type CartState = {
     discountedTotal: number
     totalProducts: number
     totalQuantity: number
+    userCart:CartProduct|null
 }

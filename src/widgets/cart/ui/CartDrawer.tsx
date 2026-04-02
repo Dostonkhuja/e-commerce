@@ -2,7 +2,7 @@ import { useAppSelector, useAppDispatch } from "@/app/providers/store/hooks";
 import {
     removeFromCart,
     clearCart,
-} from "@/features/cart/model/cartSlice";
+} from "@/entitys/cart/model/cartPersistSlice.ts";
 import { closeCart } from "@/features/cart/model/cartUiSlice";
 import {formatPrice} from "@/shared/lib";
 
@@ -10,7 +10,7 @@ export const CartDrawer = () => {
     const dispatch = useAppDispatch();
 
     const isOpen = useAppSelector((state) => state.cartUI.isOpen);
-    const cart = useAppSelector((state) => state.cart);
+    const cart = useAppSelector((state) => state.cartPersist);
 
     const products = cart?.products || [];
     const total = cart?.total || 0;
