@@ -1,9 +1,9 @@
 // import type { RootState } from "@/app/store/store.ts";
 
-// export const selectCarts = (state: RootState) => state.cart.carts;
+// export const selectCarts = (state: RootState) => state.cartDrawer.carts;
 
 // export const selectCartLoading = (state: RootState) =>
-//     state.cart.loading;
+//     state.cartDrawer.loading;
 //
 // export const selectCartError = (state: RootState) =>
-//     state.cart.error;
+//     state.cartDrawer.error;

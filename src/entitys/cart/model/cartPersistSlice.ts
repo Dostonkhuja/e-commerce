@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import {type CartState, type CartProduct, syncCartWithServerThunk, updateCartThunk} from '../../../features/cart'
-// import {fetchUserCartThunk} from "@/features/cart/model/fetchUserCartThunk.ts";
+// import {fetchUserCartThunk} from "@/features/cartDrawer/model/fetchUserCartThunk.ts";
 const initialState: CartState & { syncStatus: string } = {
     id: 1,
     products: [],
@@ -140,15 +140,15 @@ const cartPersistSlice = createSlice({
             // })
 
             // .addCase(fetchUserCartThunk.fulfilled, (state, action) => {
-            //     const cart = action.payload;
-            //     console.log(cart)
-            //     state.userCart = cart;
-                // state.id = cart.id;
-                // state.products = cart.products;
-                // state.total = cart.total;
-                // state.discountedTotal = cart.discountedTotal;
-                // state.totalProducts = cart.totalProducts;
-                // state.totalQuantity = cart.totalQuantity;
+            //     const cartDrawer = action.payload;
+            //     console.log(cartDrawer)
+            //     state.userCart = cartDrawer;
+                // state.id = cartDrawer.id;
+                // state.products = cartDrawer.products;
+                // state.total = cartDrawer.total;
+                // state.discountedTotal = cartDrawer.discountedTotal;
+                // state.totalProducts = cartDrawer.totalProducts;
+                // state.totalQuantity = cartDrawer.totalQuantity;
                 // state.syncStatus = "success";
             // })
 

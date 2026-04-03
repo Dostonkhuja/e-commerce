@@ -11,4 +11,5 @@ export {type CartState} from '../../entitys/cart/model/types.ts'
 export {updateCartRequest} from '../cart/api/updateCartRequestApi.ts'
 export {syncCartWithServerThunk} from '../cart/model/syncCartWithServerThunk .ts'
 export {updateCartThunk} from '../cart/model/updateCartThunk.ts'
+export {useCartDrawer} from '../cart/hooks/useCartDrawer.ts'
 

@@ -1,5 +1,5 @@
-import {ProductList} from "@/widgets/Products";
-import {CartDrawer} from "@/widgets/cart";
+import {ProductList} from "@/widgets/ProductsList";
+import {CartDrawer} from "@/widgets/cartDrawer";
 
 const HomePage = () => {
 

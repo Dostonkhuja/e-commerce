@@ -2,8 +2,9 @@ import {type Product, ProductCard} from "@/entitys/products";
 import { ProductSkeleton } from "@/shared/ui";
 import { useProducts } from "@/entitys/products";
 import {useState} from "react";
-import {ProductDrawer} from "@/features/products";
 import {AddToCartButton} from "@/features/cart";
+
+import {ProductDrawer} from "@/widgets/ProductsList/index.ts";
 
 const gridClass =
     "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-white dark:bg-gray-950 min-h-screen";

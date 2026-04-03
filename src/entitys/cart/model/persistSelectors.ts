@@ -1,10 +1,10 @@
 import type { RootState } from "@/app/store/store.ts";
 
-// export const selectCart = (state: RootState) => state.cart
+// export const selectCart = (state: RootState) => state.cartDrawer
 //
-// export const selectCartTotal = (state: RootState) => state.cart.total
+// export const selectCartTotal = (state: RootState) => state.cartDrawer.total
 //
-// export const selectCartQuantity = (state: RootState) => state.cart.totalQuantity
+// export const selectCartQuantity = (state: RootState) => state.cartDrawer.totalQuantity
 //
 export const selectCartProducts = (state: RootState) =>
     state.cartPersist?.products || [];

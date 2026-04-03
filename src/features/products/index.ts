@@ -1,1 +1,1 @@
-export {ProductDrawer} from './productsDrawer'
+export {useProductDrawer} from './productsDrawer/hooks/useProductDrawer'

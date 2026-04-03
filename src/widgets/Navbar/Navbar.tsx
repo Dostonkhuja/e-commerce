@@ -1,5 +1,5 @@
-import {ThemeToggle} from "../../../shared/ui";
-import {AuthController} from "../../../features/auth";
+import {ThemeToggle} from "@/shared/ui";
+import {AuthController} from "@/features/auth";
 import {CartButton} from "@/features/cart";
 
 export const Navbar = () => {
