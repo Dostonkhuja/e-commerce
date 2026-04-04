@@ -1,26 +1,9 @@
 import { axiosInstance } from "@/shared/api"
-
-export type LoginRequest = {
-    username: string
-    password: string
-    expiresInMins?: number
-}
-
-export type LoginResponse = {
-    id: number
-    username: string
-    email: string
-    firstName: string
-    lastName: string
-    gender: string
-    image: string
-    accessToken: string,
-    refreshToken: string
-}
+import type {LoginRequest, LoginResponse} from "@/features/auth/model/types.ts";
 
 const DEFAULT_EXPIRES_MIN = 30
 
-export const login = async (
+export const loginAPI = async (
     payload: LoginRequest
 ): Promise<LoginResponse> => {
     const { data } = await axiosInstance.post<LoginResponse>(

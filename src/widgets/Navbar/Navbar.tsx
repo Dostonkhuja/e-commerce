@@ -1,6 +1,7 @@
 import {ThemeToggle} from "@/shared/ui";
-import {AuthController} from "@/features/auth";
-import {CartButton} from "@/features/cart";
+
+import {OpenCartButton} from "@/features/cart";
+import {AuthController} from "@/widgets/AuthController";
 
 export const Navbar = () => {
     return (
@@ -27,7 +28,7 @@ export const Navbar = () => {
 
                 {/* Right */}
                 <div className="flex items-center gap-3">
-                    <CartButton/>
+                    <OpenCartButton/>
                     <ThemeToggle/>
                     <AuthController/>
                 </div>

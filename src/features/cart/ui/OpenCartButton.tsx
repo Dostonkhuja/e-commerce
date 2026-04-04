@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "@/app/providers/store/hooks";
 import { toggleCart } from "../model/cartUiSlice";
 import { selectCartCount } from "@/entitys/cart/model/persistSelectors.ts";
 
-export const CartButton = () => {
+export const OpenCartButton = () => {
     const dispatch = useAppDispatch();
     const count = useAppSelector(selectCartCount);
 

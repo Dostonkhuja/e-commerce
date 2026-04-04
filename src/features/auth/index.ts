@@ -1,6 +1,7 @@
-export {login, type LoginRequest,type LoginResponse} from './api/LoginApi'
-export {useLogin} from './hooks/useLogin'
+export {loginAPI} from './api/LoginAPI.ts'
 export {LoginModal} from './ui/LoginModal'
 export {LoginButton} from './ui/LoginButton'
-export {UserInfo} from './ui/UserInfo'
-export {AuthController} from './ui/AuthController'
+
+export {useLogin} from './hooks/useLogin'
+export {useLogout} from './hooks/useLogout.ts'
+export {getUserFromStorage} from './hooks/getUserFromStorage'

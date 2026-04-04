@@ -6,7 +6,6 @@ type Props = {
 };
 
 export function ProductDrawerHeader({ product, onClose }: Props) {
-    const inStock = product.availabilityStatus === "In Stock";
 
     return (
         <div className="p-6 border-b border-gray-200 dark:border-gray-800 flex items-start justify-between gap-4">
@@ -26,7 +25,7 @@ export function ProductDrawerHeader({ product, onClose }: Props) {
                             </span>
 
                     <span className={`text-xs px-2 py-1 rounded-full ${
-                        inStock
+                        product.availabilityStatus === "In Stock"
                             ? "bg-green-500 text-white"
                             : "bg-red-500 text-white"
                     }`}>

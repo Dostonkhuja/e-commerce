@@ -7,6 +7,8 @@ export const useProducts = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string>("");
 
+    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
     useEffect(() => {
         (async () => {
             try {
@@ -22,5 +24,5 @@ export const useProducts = () => {
         })();
     }, []);
 
-    return { products, loading, error };
+    return { products, loading, error ,selectedProduct,setSelectedProduct};
 };

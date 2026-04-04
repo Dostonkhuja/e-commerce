@@ -3,7 +3,7 @@ export {addToCartHandler} from "@/features/cart/model/addToCartHandler.ts";
 export {getUserCart} from "@/features/cart/api/getUserCart.ts";
 
 export {AddToCartButton} from './ui/AddToCartButton'
-export {CartButton} from './ui/CartButton'
+export {OpenCartButton} from './ui/OpenCartButton.tsx'
 
 export {type CartProduct} from '../../entitys/cart/model/types.ts'
 export {type CartState} from '../../entitys/cart/model/types.ts'

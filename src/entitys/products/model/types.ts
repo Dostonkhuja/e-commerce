@@ -51,3 +51,10 @@ export type Review = {
     date: string;
     reviewerName: string;
 };
+
+export interface ProductResponse {
+    products: Product[];
+    total: number;
+    skip: number;
+    limit: number;
+}

@@ -24,6 +24,7 @@ export const CartDrawerBody = () => {
                         rounded-lg
                         border border-gray-100 dark:border-gray-800
                         bg-gray-50 dark:bg-gray-800
+                        w-w-full max-w-2xl w-80
                     "
                 >
                     <img
