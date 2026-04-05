@@ -1,4 +1,4 @@
-import {addToCart} from "@/entitys/cart/model/cartPersistSlice.ts";
+import {addToCart} from "@/features/cart/model/cartPersistSlice.ts";
 
 import type {CartProduct} from "@/entitys/cart/model/types.ts";
 import type {AppDispatch} from "@/app/store/store.ts";

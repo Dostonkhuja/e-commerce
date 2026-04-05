@@ -1,5 +1,5 @@
 import {useAppSelector, useAppDispatch} from "@/app/providers/store/hooks.ts";
-import {clearCart} from "@/entitys/cart/model/cartPersistSlice.ts";
+import {clearCart} from "@/features/cart/model/cartPersistSlice.ts";
 import {closeCart} from "@/features/cart/model/cartUiSlice.ts";
 import {formatPrice} from "@/shared/lib";
 

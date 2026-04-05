@@ -3,7 +3,7 @@ import type { FormEvent, ChangeEvent } from "react";
 import { loginAPI } from "../index";
 import type { AxiosError } from "axios";
 import {useAppDispatch, useAppSelector} from "@/app/providers/store/hooks";
-import {selectCartProducts} from "@/entitys/cart/model/persistSelectors.ts";
+import {selectCartProducts} from "@/features/cart/model/persistSelectors.ts";
 import {updateCartThunk} from "@/features/cart";
 import type {LoginError} from "@/features/auth/model/types.ts";
 

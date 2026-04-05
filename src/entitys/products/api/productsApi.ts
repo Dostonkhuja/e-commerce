@@ -1,7 +1,18 @@
-import { axiosInstance } from "../../../shared/api/index";
-import type {Product, ProductResponse} from '../index'
+import { axiosInstance } from "@/shared/api/index";
+import type { ProductResponse } from "../index";
 
-export const getProducts = async (): Promise<Product[]> => {
-    const { data } = await axiosInstance.get<ProductResponse>("/products")
-    return data.products
-}
+type Params = {
+    limit: number;
+    skip: number;
+};
+
+export const getProducts = async ({
+                                      limit,
+                                      skip,
+                                  }: Params): Promise<ProductResponse> => {
+    const { data } = await axiosInstance.get<ProductResponse>(
+        `/products?limit=${limit}&skip=${skip}`
+    );
+
+    return data;
+};

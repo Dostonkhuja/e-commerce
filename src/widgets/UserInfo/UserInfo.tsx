@@ -1,4 +1,4 @@
-import {UserInfoCard} from "@/entitys/auth";
+import {UserInfoCard} from "@/entitys/user";
 import {getUserFromStorage, useLogout} from "@/features/auth";
 import {LogoutButton} from "@/features/auth/ui/LogoutButton.tsx";
 

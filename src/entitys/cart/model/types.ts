@@ -10,11 +10,12 @@ export type CartProduct = {
 }
 
 export type CartState = {
-    id: number
+    id: number|null
     products: CartProduct[]
     total: number
     discountedTotal: number
     totalProducts: number
     totalQuantity: number
     userCart:CartProduct|null
+    syncStatus: string
 }

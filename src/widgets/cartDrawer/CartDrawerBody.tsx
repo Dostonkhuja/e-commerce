@@ -1,5 +1,5 @@
 import {useAppSelector, useAppDispatch} from "@/app/providers/store/hooks.ts";
-import {removeFromCart} from "@/entitys/cart/model/cartPersistSlice.ts";
+import {removeFromCart} from "@/features/cart/model/cartPersistSlice.ts";
 
 export const CartDrawerBody = () => {
     const dispatch = useAppDispatch();

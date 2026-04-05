@@ -3,7 +3,7 @@ import {Drawer} from "@/shared/ui/drawer/Drawer";
 import {ProductDrawerHeader} from "./ProductDrawerHeader";
 import {ProductDrawerGallery} from "./ProductDrawerGallery";
 import {ProductDrawerPrice} from "./ProductDrawerPrice";
-import {ProductDrawerSpecs} from "./ProductDrawerSpaces";
+import {ProductDrawerSpecs} from "./ProductDrawerSpecs.tsx";
 import {ProductDrawerReviews} from "./ProductDrawerReviews";
 
 import {AddToCartButton} from "@/features/cart";

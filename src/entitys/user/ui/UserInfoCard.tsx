@@ -1,4 +1,4 @@
-import type {User} from "@/entitys/auth";
+import type {User} from "@/entitys/user";
 
 type Props = {
     user: User;

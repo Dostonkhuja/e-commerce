@@ -1,9 +1,16 @@
-// import type { RootState } from "@/app/store/store.ts";
 
-// export const selectCarts = (state: RootState) => state.cartDrawer.carts;
+import {type RootState } from '@/app/store/store'
 
-// export const selectCartLoading = (state: RootState) =>
-//     state.cartDrawer.loading;
-//
-// export const selectCartError = (state: RootState) =>
-//     state.cartDrawer.error;
+export const selectCart = (state: RootState) => state.cartPersist
+
+export const selectCartProducts = (state: RootState) =>
+    state.cartPersist.products
+
+export const selectCartTotal = (state: RootState) =>
+    state.cartPersist.total
+
+export const selectCartQuantity = (state: RootState) =>
+    state.cartPersist.totalQuantity
+
+export const selectCartStatus = (state: RootState) =>
+    state.cartPersist.syncStatus

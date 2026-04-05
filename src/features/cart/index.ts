@@ -9,7 +9,9 @@ export {type CartProduct} from '../../entitys/cart/model/types.ts'
 export {type CartState} from '../../entitys/cart/model/types.ts'
 
 export {updateCartRequest} from '../cart/api/updateCartRequestApi.ts'
-export {syncCartWithServerThunk} from '../cart/model/syncCartWithServerThunk .ts'
-export {updateCartThunk} from '../cart/model/updateCartThunk.ts'
+export {syncCartWithServerThunk} from '../cart/model/cartThunks.ts'
+export {updateCartThunk} from '../cart/model/cartThunks.ts'
 export {useCartDrawer} from '../cart/hooks/useCartDrawer.ts'
+
+export {cartPersistReducer} from '../cart/model/cartPersistSlice.ts'
 

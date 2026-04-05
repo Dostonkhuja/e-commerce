@@ -1,5 +1,5 @@
 import { useAppDispatch } from "@/app/providers/store/hooks";
-import { clearCart } from "@/entitys/cart/model/cartPersistSlice";
+import { clearCart } from "@/features/cart/model/cartPersistSlice.ts";
 
 export const useLogout = (setIsAuth: (v: boolean) => void) => {
     const dispatch = useAppDispatch();

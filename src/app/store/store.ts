@@ -1,5 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import cartPersistReducer from '@/entitys/cart/model/cartPersistSlice.ts'
+import {cartPersistReducer} from '@/features/cart/model/cartPersistSlice.ts'
 import cartUIReducer from '@/features/cart/model/cartUiSlice'
 import { persistReducer, persistStore } from 'redux-persist'
 
