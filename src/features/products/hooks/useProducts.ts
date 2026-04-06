@@ -1,12 +1,11 @@
-
 import { useState } from "react";
 import {usePagination} from "@/features/products";
-import {useProductsQuery} from "@/entitys/products";
+import {type Product, useProductsQuery} from "@/entitys/products";
 
 export const useProducts = () => {
     const { page, setPage } = usePagination({ initialPage: 1 });
 
-    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
     const { products, loading, error, total } =
         useProductsQuery({

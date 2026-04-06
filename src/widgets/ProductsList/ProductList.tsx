@@ -1,5 +1,5 @@
 import {ProductCard, useProducts} from "@/entitys/products";
-import {ProductSkeleton} from "@/shared/ui";
+import {Carousel, ProductSkeleton} from "@/shared/ui";
 import {AddToCartButton} from "@/features/cart";
 import {ProductPagination} from "@/features/products";
 import {ProductDrawer} from "@/widgets/ProductDrawer";
@@ -32,7 +32,7 @@ export const ProductList = () => {
 
     return (
         <div className="min-h-screen bg-white dark:bg-gray-950 flex flex-col">
-
+            <Carousel/>
             {/* GRID AREA */}
             <div className="flex-1">
                 <div className={gridClass}>
