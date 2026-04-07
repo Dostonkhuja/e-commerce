@@ -2,6 +2,8 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import {cartPersistReducer} from '@/features/cart/model/cartPersistSlice.ts'
 import cartUIReducer from '@/features/cart/model/cartUiSlice'
 import { persistReducer, persistStore } from 'redux-persist'
+import productsReducer from "@/features/products/model/productsSlice";
+import categoriesReducer from "@/entitys/categories/model/categoriesSlice";
 
 const storage = {
     getItem: (key: string) => {
@@ -17,7 +19,9 @@ const storage = {
 
 const rootReducer = combineReducers({
     cartPersist: cartPersistReducer,
-    cartUI: cartUIReducer
+    cartUI: cartUIReducer,
+    categories: categoriesReducer,
+    products: productsReducer
 })
 
 const persistConfig = {

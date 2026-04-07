@@ -1,19 +1,42 @@
-import { useState } from "react";
-import {usePagination} from "@/features/products";
-import {type Product, useProductsQuery} from "@/entitys/products";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "@/app/providers/store/hooks";
+import {
+    setPage,
+    setSelectedProduct,
+    setCategory
+} from "../model/productsSlice";
+import {fetchProductsThunk} from "@/features/products";
+import type {Product} from "@/entitys/products";
 
 export const useProducts = () => {
-    const { page, setPage } = usePagination({ initialPage: 1 });
+    const dispatch = useAppDispatch();
 
-    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+    const {
+        products,
+        loading,
+        error,
+        total,
+        page,
+        limit,
+        category,
+        selectedProduct,
+    } = useAppSelector((state) => state.products);
 
-    const { products, loading, error, total } =
-        useProductsQuery({
-            page,
-            limit: 10,
-        });
+    useEffect(() => {
+        const id = setTimeout(() => {
+            dispatch(
+                fetchProductsThunk({
+                    page,
+                    limit,
+                    category: category ?? undefined,
+                })
+            )
+        }, 200);
 
-    const totalPages = Math.ceil(total / 10);
+        return () => clearTimeout(id);
+    }, [page, limit, category,dispatch]);
+
+    const totalPages = Math.ceil(total / limit);
 
     return {
         products,
@@ -21,10 +44,12 @@ export const useProducts = () => {
         error,
 
         page,
-        setPage,
+        setPage: (p: number) => dispatch(setPage(p)),
         totalPages,
-
+        setCategory: (c: string | null) =>
+            dispatch(setCategory(c)),
         selectedProduct,
-        setSelectedProduct,
+        setSelectedProduct: (p: Product | null) =>
+            dispatch(setSelectedProduct(p)),
     };
 };
