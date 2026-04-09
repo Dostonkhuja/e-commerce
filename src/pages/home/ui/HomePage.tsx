@@ -1,7 +1,7 @@
 import { ProductList } from "@/widgets/ProductsList";
 import { CartDrawer } from "@/widgets/cartDrawer";
-import { CategoriesList } from "@/entitys/categories";
 import { Carousel } from "@/shared/ui";
+import {CategoriesList} from "@/widgets/categoriesList";
 
 const HomePage = () => {
     return (
@@ -23,7 +23,6 @@ const HomePage = () => {
                     <section>
                         <ProductList />
                     </section>
-
 
                 </div>
             </main>

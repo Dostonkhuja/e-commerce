@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import {axiosInstance} from "@/shared/api";
+import {searchProductsApi} from "@/features/products/api/searchProductAPI.ts";
 
 export const fetchProductsThunk = createAsyncThunk(
     "products/fetchProducts",
@@ -13,5 +14,12 @@ export const fetchProductsThunk = createAsyncThunk(
         const { data } = await axiosInstance.get(url);
 
         return data;
+    }
+);
+
+export const searchProductsThunk = createAsyncThunk(
+    "products/search",
+    async (query: string) => {
+        return await searchProductsApi(query);
     }
 );
