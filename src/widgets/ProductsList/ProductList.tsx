@@ -1,7 +1,7 @@
 import { ProductCard, useProducts } from "@/entitys/products";
 import { ProductSkeleton } from "@/shared/ui";
 import { AddToCartButton } from "@/features/cart";
-import { ProductPagination } from "@/features/products";
+import {ProductPagination, SortProducts} from "@/features/products";
 import { ProductDrawer } from "@/widgets/ProductDrawer";
 
 export const ProductList = () => {
@@ -15,7 +15,6 @@ export const ProductList = () => {
         setPage,
         totalPages,
     } = useProducts();
-
     const gridClass =
         "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6";
 
@@ -31,9 +30,10 @@ export const ProductList = () => {
 
     return (
         <div className="flex flex-col gap-6">
-
+            <SortProducts/>
             {/* GRID */}
             <div className={gridClass}>
+
                 {loading
                     ? Array.from({ length: 6 }).map((_, i) => (
                         <ProductSkeleton key={i} />

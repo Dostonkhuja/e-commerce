@@ -1,32 +1,22 @@
-import { createSlice ,type PayloadAction } from "@reduxjs/toolkit";
+import { createSlice} from "@reduxjs/toolkit";
 import { fetchCategoriesThunk } from "./categoriesThunks";
 
 type CategoriesState = {
     items: string[];
     loading: boolean;
     error: string;
-    activeCategory: string | null;
 };
 
 const initialState: CategoriesState = {
     items: [],
     loading: false,
     error: "",
-    activeCategory: null,
 };
 
 const categoriesSlice = createSlice({
     name: "categories",
     initialState,
-    reducers: {
-        setActiveCategory: (state, action: PayloadAction<string>) => {
-            if (state.activeCategory === action.payload) {
-                state.activeCategory = null;
-            } else {
-                state.activeCategory = action.payload;
-            }
-        },
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(fetchCategoriesThunk.pending, (state) => {
@@ -43,5 +33,5 @@ const categoriesSlice = createSlice({
     },
 });
 
-export const { setActiveCategory } = categoriesSlice.actions;
+
 export default categoriesSlice.reducer;

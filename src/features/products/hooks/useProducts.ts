@@ -3,7 +3,6 @@ import { useAppDispatch, useAppSelector } from "@/app/providers/store/hooks";
 import {
     setPage,
     setSelectedProduct,
-    setCategory
 } from "../model/productsSlice";
 import {fetchProductsThunk} from "@/features/products";
 import type {Product} from "@/entitys/products";
@@ -19,7 +18,10 @@ export const useProducts = () => {
         page,
         limit,
         category,
+        searchQuery,
         selectedProduct,
+        sortBy,
+        order
     } = useAppSelector((state) => state.products);
 
     useEffect(() => {
@@ -28,15 +30,16 @@ export const useProducts = () => {
                 fetchProductsThunk({
                     page,
                     limit,
-                    category: category ?? undefined,
+                    category,
+                    search: searchQuery.trim() || undefined,
+                    sortBy,
+                    order,
                 })
-            )
+            );
         }, 200);
 
         return () => clearTimeout(id);
-    }, [page, limit, category,dispatch]);
-
-    const totalPages = Math.ceil(total / limit);
+    }, [page, limit, category, searchQuery, sortBy, order]);
 
     return {
         products,
@@ -45,11 +48,11 @@ export const useProducts = () => {
 
         page,
         setPage: (p: number) => dispatch(setPage(p)),
-        totalPages,
-        setCategory: (c: string | null) =>
-            dispatch(setCategory(c)),
+
         selectedProduct,
         setSelectedProduct: (p: Product | null) =>
             dispatch(setSelectedProduct(p)),
+
+        totalPages: Math.ceil(total / limit),
     };
 };
