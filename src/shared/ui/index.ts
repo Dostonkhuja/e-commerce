@@ -1,7 +1,0 @@
-export {ProductSkeleton} from './skeleton/ProductSkeleton.tsx'
-export {CategoriesSkeleton} from './skeleton/CategoriesSkeleton.tsx'
-export {useTheme} from '../lib/useTheme.ts'
-export {ThemeToggle} from '@/shared/ui/button/ThemeToggle.tsx'
-export {Drawer} from '../ui/drawer/Drawer.tsx'
-export {Carousel} from '../ui/Carousel/Carousel.tsx'
-export {useCarousel} from '../lib/useCarousel.ts'
