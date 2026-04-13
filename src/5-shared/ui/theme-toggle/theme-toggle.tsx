@@ -1,4 +1,5 @@
 import { useTheme } from "@/5-shared/lib";
+import { Sun, Moon } from "lucide-react";
 
 export const ThemeToggle = () => {
     const { theme, toggleTheme } = useTheme();
@@ -18,7 +19,11 @@ export const ThemeToggle = () => {
             "
             aria-label="Toggle theme"
         >
-            {theme === "light" ? "Moon" : "Sun"}
+            {theme === "light" ? (
+                <Moon className="h-5 w-5" />
+            ) : (
+                <Sun className="h-5 w-5" />
+            )}
         </button>
     );
 };

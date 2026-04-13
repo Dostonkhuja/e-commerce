@@ -1,6 +1,7 @@
-import { useAppDispatch, useAppSelector } from "@/5-shared/lib/store/hooks.ts";
-import { toggleCart } from "../model/cart-ui.slice.ts";
-import { selectCartCount } from "../model/cart-persist.selectors.ts";
+import { useAppDispatch, useAppSelector } from "@/5-shared/lib/store/hooks";
+import { toggleCart } from "../model/cart-ui.slice";
+import { selectCartCount } from "../model/cart-persist.selectors";
+import { ShoppingCart } from "lucide-react";
 
 export const OpenCartButton = () => {
     const dispatch = useAppDispatch();
@@ -10,27 +11,32 @@ export const OpenCartButton = () => {
         <button
             onClick={() => dispatch(toggleCart())}
             className="
-                relative
-                flex items-center gap-2
+                relative flex items-center justify-center
+                h-10 w-10
                 rounded-lg
                 border border-gray-200 dark:border-gray-700
-                bg-white px-4 py-1.5 text-sm text-gray-900
+                bg-white dark:bg-gray-900
+                text-gray-900 dark:text-white
                 transition
-                hover:bg-gray-100
+                hover:bg-gray-100 dark:hover:bg-gray-800
                 active:scale-95
-                dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800
+                shadow-sm
             "
+            aria-label="Open cart"
         >
-            <span>Cart</span>
+            <ShoppingCart className="h-5 w-5" />
 
             {count > 0 && (
                 <span
                     className="
-                        absolute -right-2 -top-2
+                        absolute -right-1.5 -top-1.5
                         flex h-5 min-w-5 items-center justify-center
-                        rounded-full border border-white bg-red-500 px-1
-                        text-[11px] font-medium text-white shadow-sm
-                        dark:border-gray-900
+                        rounded-full
+                        bg-red-500 text-white
+                        text-[11px] font-semibold
+                        px-1
+                        shadow-md
+                        border border-white dark:border-gray-900
                     "
                 >
                     {count > 99 ? "99+" : count}
